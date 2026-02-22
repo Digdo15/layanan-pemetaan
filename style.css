@@ -1,24 +1,31 @@
-:root {
-    /* Warna Latar Belakang Gelap (Sesuai gambar menu) */
-    --bg-main: #fdfdfd;         /* Background paling dasar (hitam) */
-    --bg-surface: #f5f5f5;      /* Background untuk Card & Navbar (abu-abu sangat gelap) */
-    --bg-surface-alt: #27272A;  /* Background untuk elemen dalam card */
-    
-    /* Warna Aksen (Industrial Gold/Yellow - Bisa Anda ganti sesuai warna logo) */
-    --col-accent: #007bff; 
-    --col-accent-hover: #007bff;
+/* ===================================================
+   STYLE TEMA ENGINEERING - PUTIH & BIRU (#007BFF)
+   =================================================== */
 
-    /* Warna Teks */
-    --text-heading: #FFFFFF;    /* Teks Judul Putih Bersih */
-    --text-body: #A1A1AA;       /* Teks Paragraf Abu-abu Terang */
+:root {
+    /* --- WARNA UTAMA --- */
+    --col-primary-dark: #003366; /* Biru Navy (Gelap) untuk Footer & Header Overlay */
+    --col-primary: #007bff;      /* Biru Utama (Sesuai Permintaan) */
+    --col-accent-hover: #0056b3; /* Biru Sedikit Lebih Gelap untuk efek Hover (sentuhan kursor) */
+
+    /* --- WARNA DASAR & BACKGROUND --- */
+    --bg-main: #F4F8FB;          /* Putih kebiruan sangat lembut untuk background halaman */
+    --bg-white: #FFFFFF;         /* Putih murni untuk kotak/card layanan */
+    --bg-surface-alt: #E6F2FF;   /* Biru sangat pudar untuk latar belakang ikon */
     
+    /* --- WARNA TEKS --- */
+    --text-heading: #002244;     /* Biru sangat gelap (hampir hitam) untuk Teks Judul */
+    --text-body: #4A5568;        /* Abu-abu gelap untuk paragraf agar nyaman dibaca */
+
+    /* --- PENGATURAN LAINNYA --- */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
     
     --section-spacing: 100px;
-    --border-radius: 12px;
+    --border-radius: 8px;
 }
 
+/* --- RESET & BASE STYLES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -46,13 +53,12 @@ h1, h2, h3, h4, h5 {
 
 /* --- NAVIGATION BAR --- */
 .navbar {
-    background-color: var(--bg-surface);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-white);
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.08);
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .nav-content {
@@ -78,7 +84,6 @@ h1, h2, h3, h4, h5 {
     opacity: 0.9;
 }
 
-/* Tombol Kembali di Navbar */
 .btn-back {
     display: inline-flex;
     align-items: center;
@@ -86,19 +91,18 @@ h1, h2, h3, h4, h5 {
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 0.85rem;
-    color: var(--text-heading);
+    color: var(--col-primary);
     text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 2px solid #E6F2FF;
     border-radius: 6px;
     transition: all 0.3s;
-    background: transparent;
 }
 
 .btn-back i { margin-right: 8px; font-size: 0.8rem;}
 .btn-back:hover {
-    border-color: var(--col-accent);
-    background: var(--col-accent);
-    color: #000000;
+    border-color: var(--col-primary);
+    background: var(--col-primary);
+    color: var(--bg-white);
 }
 
 /* --- HERO SECTION --- */
@@ -109,13 +113,14 @@ h1, h2, h3, h4, h5 {
     min-height: 500px;
     display: flex;
     align-items: center;
-    color: var(--text-heading);
+    color: var(--bg-white);
 }
 
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to right, rgba(18, 18, 18, 0.95) 20%, rgba(18, 18, 18, 0.6) 100%);
+    /* Gradasi overlay dari Navy ke Biru Terang agar teks putih mudah dibaca */
+    background: linear-gradient(to right, rgba(0, 51, 102, 0.9) 30%, rgba(0, 123, 255, 0.7) 100%);
     z-index: 1;
 }
 
@@ -128,25 +133,27 @@ h1, h2, h3, h4, h5 {
 .badge-service {
     display: inline-flex;
     align-items: center;
-    background: rgba(234, 179, 8, 0.15);
-    color: var(--col-accent);
-    border: 1px solid rgba(234, 179, 8, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--bg-white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 8px 16px;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 24px;
+    backdrop-filter: blur(5px);
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     line-height: 1.15;
     margin-bottom: 20px;
+    color: var(--bg-white);
 }
 
 .hero-content p {
     font-size: 1.25rem;
-    color: var(--text-body);
+    opacity: 0.95;
     max-width: 650px;
     font-weight: 400;
 }
@@ -168,8 +175,8 @@ h1, h2, h3, h4, h5 {
 .bg-pattern {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(0, 123, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 123, 255, 0.03) 1px, transparent 1px);
     background-size: 30px 30px;
     z-index: 1;
     pointer-events: none;
@@ -184,14 +191,13 @@ h1, h2, h3, h4, h5 {
 .title-underline {
     width: 80px;
     height: 4px;
-    background: var(--col-accent);
+    background: var(--col-primary);
     margin: 0 auto 40px;
     border-radius: 2px;
 }
 
 .service-intro { max-width: 850px; margin: 0 auto 70px; }
-.service-intro p { font-size: 1.125rem; }
-.service-intro strong { color: var(--text-heading); }
+.service-intro p { font-size: 1.125rem; color: var(--text-body); }
 
 /* --- GRID LAYANAN --- */
 .service-grid {
@@ -203,84 +209,80 @@ h1, h2, h3, h4, h5 {
 }
 
 .service-card {
-    background: var(--bg-surface);
+    background: var(--bg-white);
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(0, 123, 255, 0.05);
 }
 
 .service-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-    border-color: rgba(8, 113, 234, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.12);
 }
 
 .card-header-marker {
-    height: 4px;
-    background: var(--col-accent);
+    height: 5px;
+    background: var(--col-primary);
     width: 100%;
-    opacity: 0.8;
 }
 
 .card-icon {
     width: 80px;
     height: 80px;
     background: var(--bg-surface-alt);
-    color: var(--col-accent);
+    color: var(--col-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.2rem;
     margin: 35px auto 0;
-    border: 1px solid rgba(255,255,255,0.08);
     transition: all 0.3s;
 }
 
 .service-card:hover .card-icon {
-    background: var(--col-accent);
-    color: #000000;
-    transform: scale(1.1);
+    background: var(--col-primary);
+    color: var(--bg-white);
 }
 
 .card-body { padding: 30px; text-align: center; }
-.card-body h3 { font-size: 1.4rem; margin-bottom: 16px; }
-.card-body p { margin-bottom: 30px; font-size: 0.95rem; line-height: 1.6; min-height: 70px; }
+.card-body h3 { font-size: 1.4rem; margin-bottom: 16px; color: var(--text-heading); }
+.card-body p { margin-bottom: 30px; font-size: 0.95rem; }
 
 .card-features {
     text-align: left;
-    background: var(--bg-surface-alt);
+    background: var(--bg-main);
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.03);
 }
 
 .card-features span {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-heading);
+    font-weight: 600;
 }
 
 .card-features span:last-child { margin-bottom: 0; }
-.card-features i { color: var(--col-accent); margin-right: 12px; font-size: 1rem; }
+.card-features i { color: var(--col-primary); margin-right: 12px; font-size: 1rem; }
 
 /* --- WORKFLOW SECTION --- */
 .workflow-section {
-    background: var(--bg-surface);
-    border-radius: 15px;
+    background: var(--bg-white);
+    border-radius: 12px;
     padding: 60px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.05);
+    border: 1px solid rgba(0, 123, 255, 0.05);
 }
 
 .workflow-header { text-align: center; margin-bottom: 50px; }
 .workflow-header h2 { margin-bottom: 10px; }
-.workflow-header p { color: var(--col-accent); font-weight: 600; letter-spacing: 1px; text-transform: uppercase;}
+.workflow-header p { color: var(--col-primary); font-weight: 600; letter-spacing: 1px; text-transform: uppercase;}
 
 .workflow-steps {
     display: flex;
@@ -299,78 +301,74 @@ h1, h2, h3, h4, h5 {
 .step-ico {
     width: 70px; height: 70px;
     background: var(--bg-surface-alt);
-    color: var(--col-accent);
+    color: var(--col-primary);
     border-radius: 20px;
     display: flex; align-items: center; justify-content: center;
     font-size: 1.8rem;
     margin: 0 auto 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.05);
     transform: rotate(-5deg);
     transition: all 0.3s;
 }
 
 .step-item:hover .step-ico { 
     transform: rotate(0deg) scale(1.1); 
-    background: var(--col-accent); 
-    color: #000;
+    background: var(--col-primary); 
+    color: var(--bg-white);
 }
 
-.step-item h4 { margin-bottom: 10px; font-size: 1.1rem; }
+.step-item h4 { margin-bottom: 10px; font-size: 1.1rem; color: var(--text-heading); }
 .step-item p { font-size: 0.9rem; }
 
 .step-arrow {
     display: flex;
     align-items: center;
     padding-top: 30px;
-    color: rgba(255,255,255,0.1);
+    color: #CBD5E0;
     font-size: 1.5rem;
 }
 
 /* --- CTA SECTION --- */
 .cta-section {
-    background: var(--bg-surface-alt);
-    padding: 80px 20px;
-    color: var(--text-heading);
+    background: var(--col-primary-dark);
+    padding: 100px 20px;
+    color: var(--bg-white);
     position: relative;
     overflow: hidden;
-    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .cta-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10l80 80M90 10L10 90" stroke="rgba(255,255,255,0.02)" stroke-width="2"/></svg>');
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10l80 80M90 10L10 90" stroke="rgba(255,255,255,0.03)" stroke-width="2"/></svg>');
 }
 
-.cta-section h2 { font-size: 2.2rem; margin-bottom: 15px; }
-.cta-section p { font-size: 1.1rem; margin-bottom: 40px; color: var(--text-body); max-width: 700px; margin-left: auto; margin-right: auto;}
+.cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--bg-white); }
+.cta-section p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.85; max-width: 700px; margin-left: auto; margin-right: auto;}
 
 .btn-cta-wa {
     display: inline-flex;
     align-items: center;
-    background: #25D366;
-    color: #ffffff;
-    padding: 16px 40px;
-    font-size: 1.1rem;
+    background: #25D366; /* Warna Hijau WA */
+    color: var(--bg-white);
+    padding: 18px 45px;
+    font-size: 1.2rem;
     font-family: var(--font-heading);
     font-weight: 700;
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
 }
 
-.btn-cta-wa i { margin-right: 12px; font-size: 1.4rem; }
-.btn-cta-wa:hover { background: #1EBE57; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); }
+.btn-cta-wa i { margin-right: 12px; font-size: 1.5rem; }
+.btn-cta-wa:hover { background: #1EBE57; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
 
 /* --- FOOTER --- */
 footer {
-    background: #0A0A0A;
-    color: rgba(255,255,255,0.4);
+    background: #001A33; /* Navy yang sangat pekat untuk footer */
+    color: rgba(255,255,255,0.6);
     padding: 60px 0 40px;
     text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .footer-content {
