@@ -1,16 +1,12 @@
-/* ===================================================
-   STYLE TEMA ENGINEERING & KORPORAT - DARK MODE
-   =================================================== */
-
 :root {
     /* Warna Latar Belakang Gelap (Sesuai gambar menu) */
-    --bg-main: #121212;         /* Background paling dasar (hitam) */
-    --bg-surface: #1E1E1E;      /* Background untuk Card & Navbar (abu-abu sangat gelap) */
+    --bg-main: #fdfdfd;         /* Background paling dasar (hitam) */
+    --bg-surface: #f5f5f5;      /* Background untuk Card & Navbar (abu-abu sangat gelap) */
     --bg-surface-alt: #27272A;  /* Background untuk elemen dalam card */
     
     /* Warna Aksen (Industrial Gold/Yellow - Bisa Anda ganti sesuai warna logo) */
-    --col-accent: #EAB308; 
-    --col-accent-hover: #CA8A04;
+    --col-accent: #007bff; 
+    --col-accent-hover: #007bff;
 
     /* Warna Teks */
     --text-heading: #FFFFFF;    /* Teks Judul Putih Bersih */
@@ -51,7 +47,7 @@ h1, h2, h3, h4, h5 {
 /* --- NAVIGATION BAR --- */
 .navbar {
     background-color: var(--bg-surface);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -219,7 +215,7 @@ h1, h2, h3, h4, h5 {
 .service-card:hover {
     transform: translateY(-12px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-    border-color: rgba(234, 179, 8, 0.3);
+    border-color: rgba(8, 113, 234, 0.3);
 }
 
 .card-header-marker {
