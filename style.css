@@ -1,12 +1,8 @@
-/* ===================================================
-   STYLE TEMA ENGINEERING - PUTIH & BIRU (#007BFF)
-   =================================================== */
-
 :root {
     /* --- WARNA UTAMA --- */
     --col-primary-dark: #003366; /* Biru Navy (Gelap) untuk Footer & Header Overlay */
     --col-primary: #007bff;      /* Biru Utama (Sesuai Permintaan) */
-    --col-accent-hover: #0056b3; /* Biru Sedikit Lebih Gelap untuk efek Hover (sentuhan kursor) */
+    --col-accent-hover: #0056b3; /* Biru Sedikit Lebih Gelap untuk efek Hover */
 
     /* --- WARNA DASAR & BACKGROUND --- */
     --bg-main: #F4F8FB;          /* Putih kebiruan sangat lembut untuk background halaman */
@@ -119,7 +115,6 @@ h1, h2, h3, h4, h5 {
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    /* Gradasi overlay dari Navy ke Biru Terang agar teks putih mudah dibaca */
     background: linear-gradient(to right, rgba(0, 51, 102, 0.9) 30%, rgba(0, 123, 255, 0.7) 100%);
     z-index: 1;
 }
@@ -348,7 +343,7 @@ h1, h2, h3, h4, h5 {
 .btn-cta-wa {
     display: inline-flex;
     align-items: center;
-    background: #25D366; /* Warna Hijau WA */
+    background: #25D366; 
     color: var(--bg-white);
     padding: 18px 45px;
     font-size: 1.2rem;
@@ -365,7 +360,7 @@ h1, h2, h3, h4, h5 {
 
 /* --- FOOTER --- */
 footer {
-    background: #001A33; /* Navy yang sangat pekat untuk footer */
+    background: #001A33; 
     color: rgba(255,255,255,0.6);
     padding: 60px 0 40px;
     text-align: center;
@@ -379,17 +374,52 @@ footer {
 
 footer p { font-size: 0.9rem; margin-top: 15px;}
 
-/* --- RESPONSIVE DESIGN --- */
+/* ===================================================
+   RESPONSIVE DESIGN (OPTIMASI UNTUK HP & TABLET)
+   =================================================== */
+
+/* Tablet & Layar Menengah */
 @media (max-width: 992px) {
     .workflow-steps { flex-direction: column; align-items: center; }
     .step-arrow { display: none; }
-    .step-item { margin-bottom: 30px; max-width: 400px; }
+    .step-item { margin-bottom: 30px; max-width: 100%; width: 100%; }
+    .service-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
 }
 
+/* Smartphone (Layar HP) */
 @media (max-width: 768px) {
-    .nav-content { flex-direction: column; gap: 15px; }
-    .hero-content h1 { font-size: 2.2rem; }
-    .section-title { font-size: 1.8rem; }
+    .nav-content { flex-direction: column; gap: 15px; text-align: center; }
+    .company-logo { max-height: 45px; }
+    
+    .service-hero { height: auto; min-height: 70vh; padding: 120px 20px 80px; }
+    .hero-content h1 { font-size: 2rem; line-height: 1.3; }
+    .hero-content p { font-size: 1.05rem; }
+    .badge-service { font-size: 0.8rem; padding: 6px 12px; }
+    
+    .service-main { padding: 60px 0; }
+    .section-title { font-size: 1.7rem; }
+    .service-intro { margin-bottom: 40px; }
+    .service-intro p { font-size: 1rem; }
+    
     .workflow-section { padding: 40px 20px; }
-    .cta-section h2 { font-size: 1.8rem; }
+    
+    .cta-section { padding: 60px 20px; }
+    .cta-section h2 { font-size: 1.6rem; }
+    .cta-section p { font-size: 1rem; margin-bottom: 30px; }
+    
+    .btn-cta-wa { 
+        display: flex; 
+        justify-content: center; 
+        width: 100%; 
+        padding: 15px 20px;
+        font-size: 1.05rem;
+    }
+    
+    footer { padding: 40px 20px 20px; }
+}
+
+/* Layar HP Sangat Kecil (misal iPhone SE) */
+@media (max-width: 400px) {
+    .hero-content h1 { font-size: 1.8rem; }
+    .service-card { padding: 25px 20px; }
 }
